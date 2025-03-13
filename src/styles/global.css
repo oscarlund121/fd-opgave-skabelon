@@ -1,1 +1,29 @@
-/* Globale styles her */
+:root {
+  /* Font */
+  --font-family-h: 'Cabin', sans-serif;
+  --font-family-p: 'Lato', sans-serif;
+
+  --h1-font-size: 50px; 
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.75rem;
+  --h4-font-size: 1.1rem;
+  --p-font-size: 14px;
+  --p-line-height: 1.5;
+  --p-letter-spacing: 0.5px;
+
+  /* Colors */
+  --background-color: white;
+  --font-color-1: white;
+  --service-card-color: rgba(38, 38, 38, 0.90);
+  
+}
+
+@layer layout {
+  body {
+    background-color: var(--background-color);
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

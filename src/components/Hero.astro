@@ -3,11 +3,56 @@ import Services from "./Services.astro";
 ---
 
 <section class="hero">
-  <!-- Markup her -->
-
+  <div>
+    <figure>
+      <img src="../src/assets/pattern.svg" alt="" />
+    </figure>
+    <h2>Empowering Your Business Growth</h2>
+    <p>
+      Discover tailored strategies and expert insights to take your business to
+      the next level. Let us help you navigate challenges and achieve
+      sustainable success.
+    </p>
+    <a href=""><button>Book a Meeting</button></a>
+  </div>
+  <img src="../src/assets/woman1.jpg" alt="" />
   <Services />
 </section>
 
 <style>
-  /* Styles her */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    figure {
+      position: absolute;
+      margin-inline: -200px;
+
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-inline: 150px;
+      padding-block: 100px;
+      color: white;
+      margin: 50px 0 150px 0;
+      background-color: black;
+      h2 {
+        font-size: var(--h1-font-size);
+        font-family: var(--font-family-h);
+      }
+
+      p {
+        font-size: var(--p-font-size);
+        font-family: var(--font-family-p);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
 </style>

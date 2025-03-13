@@ -11,8 +11,56 @@ const servicesData = await fetch(
       <li>
         <h2>{service.title}</h2>
         <p>{service.description}</p>
-        <a href="#0">{service.buttonText}</a>
+        <a href="#0"><button>{service.buttonText}</button></a>
       </li>
     ))
   }
 </ul>
+<style>
+  ul {
+    position: absolute;
+    --gap: 1rlh;
+    display: grid;
+    gap: 1rlh;
+    margin-inline: 15vw;
+    margin-block: 60vh;
+    padding: var(--gap);
+    color: white;
+    grid-template-columns: repeat(3, 1fr);
+
+
+      li {
+        grid-row: span 3;
+        display: grid;
+        grid-template-rows: subgrid;
+        gap: 10px;
+        background: var(--service-card-color);
+        border-radius: 6px;
+        padding: 2rem;
+        border-radius: 12px;
+        max-width: 350px;
+        text-align: left;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        min-width: 300px;
+        font-family: var(--font-family-p);
+        font-size: var(--p-font-size);
+      }
+
+      h2 {
+        font-family: var(--font-family-h);
+        font-size: var(--h4-font-size);
+        font-weight: bold;
+      }
+
+     
+      button{
+        background: black;
+        color: white;
+        border-radius: 25px;
+        margin-top: 10px;
+        padding: 15px 20px;
+      }
+   
+    }
+  
+</style>
