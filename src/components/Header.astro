@@ -2,17 +2,36 @@
 // @ts-nocheck
 ---
 
-<header>
-<h3>AskExpert</h3>
+<header class="full-bleed">
   <nav>
+    <h3>AskExpert</h3>
     <ul>
       <li>Home</li>
       <li>Case Study</li>
       <li>Team</li>
       <li>About</li>
     </ul>
+    <button>Login</button>
   </nav>
-  <button>Login</button>
 </header>
 
-<style></style>
+<style>
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 200px;
+    padding-block: 15px;
+    background-color: var(--service-card-color);
+    width: 100vw;
+    color: white;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+  }
+</style>

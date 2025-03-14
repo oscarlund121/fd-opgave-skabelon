@@ -1,1 +1,20 @@
 /* Override styles here */
+
+
+.flow {
+  > * + * {
+    margin-block-start: var(--flow-space, 0.5rlh);
+  }
+
+  h1 {
+    --flow-space: 2rlh;
+  }
+
+  p {
+    --flow-space: 1rlh;
+
+    + * {
+      --flow-space: 0.25rlh;
+    }
+  }
+}

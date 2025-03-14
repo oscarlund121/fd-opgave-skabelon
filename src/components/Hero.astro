@@ -1,21 +1,26 @@
 ---
 import Services from "./Services.astro";
+import Button from "./Button.astro";
 ---
 
 <section class="hero">
-  <div>
+  <article >
     <figure>
       <img src="../src/assets/pattern.svg" alt="" />
     </figure>
-    <h2>Empowering Your Business Growth</h2>
-    <p>
-      Discover tailored strategies and expert insights to take your business to
-      the next level. Let us help you navigate challenges and achieve
-      sustainable success.
-    </p>
-    <a href=""><button>Book a Meeting</button></a>
-  </div>
-  <img src="../src/assets/woman1.jpg" alt="" />
+    <div class="flow">
+      <h1>Empowering Your Business Growth</h1>
+      <p>
+        Discover tailored strategies and expert insights to take your business
+        to the next level. Let us help you navigate challenges and achieve
+        sustainable success.
+      </p>
+  <!--     <a href="">Book a Meeting</a>
+      <Button variant="primary" />  -->
+      <Button variant="book">Book a Meeting</Button>
+    </div>
+  </article>
+  <img src="../src/assets/Photo.jpg" alt="" />
   <Services />
 </section>
 
@@ -23,24 +28,32 @@ import Services from "./Services.astro";
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    
 
-    figure {
-      position: absolute;
-      margin-inline: -200px;
-
-    }
-    div {
-      display: flex;
-      flex-direction: column;
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      margin-block-start: 80px;
       gap: 20px;
-      padding-inline: 150px;
-      padding-block: 100px;
       color: white;
-      margin: 50px 0 150px 0;
-      background-color: black;
-      h2 {
+      padding-right: 50px;
+     
+
+      figure, img {
+        width: 100%;
+        height: auto%;
+        object-fit: cover;
+        max-width: 120px;
+        margin-block: 15px;
+
+      }
+      h1 {
         font-size: var(--h1-font-size);
         font-family: var(--font-family-h);
+        font-weight: bold;
       }
 
       p {
@@ -48,11 +61,13 @@ import Services from "./Services.astro";
         font-family: var(--font-family-p);
       }
     }
-
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
-  }
+
+} 
+
+
 </style>
