@@ -4,7 +4,7 @@ import Button from "./Button.astro";
 ---
 
 <section class="hero">
-  <article >
+  <article>
     <figure>
       <img src="../src/assets/pattern.svg" alt="" />
     </figure>
@@ -20,17 +20,17 @@ import Button from "./Button.astro";
       <Button variant="book">Book a Meeting</Button>
     </div>
   </article>
-  <img src="../src/assets/Photo.jpg" alt="" />
+  <img src="images/Photo.jpg" alt="" />
   <Services />
 </section>
 
 <style>
+  
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100%;
-    width: 100%;
-    background-color: black;
+    grid-column: 1 / -1;
+    background-color: #181818;
     
 
     article {
@@ -44,10 +44,10 @@ import Button from "./Button.astro";
 
       figure, img {
         width: 100%;
-        height: auto%;
+        height: auto;
         object-fit: cover;
         max-width: 120px;
-        margin-block: 15px;
+        margin-block: 25px;
 
       }
       h1 {
@@ -63,11 +63,12 @@ import Button from "./Button.astro";
     }
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
     }
 
 } 
+
 
 
 </style>

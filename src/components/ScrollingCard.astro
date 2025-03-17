@@ -1,0 +1,53 @@
+---
+//@ts-nocheck
+const scrollingData = await fetch(
+  "https://frontend-design-theme.netlify.app/api/financialProjections"
+).then((response) => response.json());
+
+console.log(scrollingData);
+---
+
+<section class="scroll-wrapper">
+  <ul class="full-width">
+    {
+      scrollingData.values.map((scrolling) => (
+        <li>
+          <h3>{scrolling.title}</h3>
+          <p>{scrolling.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+.scroll-wrapper {
+    margin-inline: calc(50% - 50vw);
+
+  .full-width {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--card-gap);
+
+    /* padding-inline: calc((100vw - var(--content-width)) / 2); */
+    padding-inline: max(20px, 50% - var(--content-width) / 2);
+    scroll-padding-inline-end: max(20px, 50% - var(--content-width) / 2);
+    /* scroll-snap-type: x mandatory; */
+    scroll-snap-type: inline mandatory;
+
+    li {
+      /*   flex-basis: 65%;
+      flex-shrink: 0; */
+      flex: min(65%, 400px) 0 0;
+      padding: 0.5rem;
+      max-width: 500px;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      padding: var(--card-padding);
+      border-radius: var(--card-border-radius);
+      background: var(--card-background);
+      color: var(--card-text-color);
+    }
+  }
+}
+</style>

@@ -1,9 +1,9 @@
 :root {
   /* Font */
-  --font-family-h: 'Cabin', sans-serif;
-  --font-family-p: 'Lato', sans-serif;
+  --font-family-h: "Cabin", sans-serif;
+  --font-family-p: "Lato", sans-serif;
 
-  --h1-font-size: 35px; 
+  --h1-font-size: 35px;
   --h2-font-size: 2rem;
   --h3-font-size: 1.75rem;
   --h4-font-size: 1.1rem;
@@ -14,16 +14,15 @@
   /* Colors */
   --background-color: white;
   --font-color-1: white;
-  --service-card-color: rgba(38, 38, 38, 0.90);
-  
+  --service-card-color: rgba(38, 38, 38, 0.9);
 }
 
 
+a {
+  text-decoration: none;
+}
 
-  a {
-    text-decoration: none;
-  }
+ul {
+  list-style: none;
+}
 
-  ul {
-    list-style: none;
-  }
