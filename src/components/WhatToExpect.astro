@@ -2,9 +2,67 @@
 
 ---
 <section>
+<div class="img-container">
+  <img class="pattern" src="images/patternwhat.svg" alt="">
+  <img class="box" src="images/greenbox.svg" alt="">
+  <img class="img-man" src="images/maninoffice.jpg" alt="">
+</div>
 <div>
-  <img src="" alt="">
-  <img src="" alt="">
-  <img src="" alt="">
+  <h1>WhatToExpect</h1>
+  <p>Our team of experts will guide you through the process of creating a successful business. We will help you to develop a business plan, create a marketing strategy, and build a strong brand. We will also provide you with the tools and resources you need to succeed. Our goal is to help you achieve sustainable success.</p>
 </div>
 </section>
+
+<style>
+section {
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: center;
+  margin: auto;
+
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: ;
+  }
+}
+
+.img-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  position: relative;
+  width: fit-content;
+}
+
+.img-container img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.pattern {
+  align-self: start;
+  justify-self: start;
+  width: 15%;
+  z-index: 1;
+  transform: translate(-20px, -20px); /* Forskudt */
+}
+
+.box {
+  align-self: center;
+  justify-self: center;
+  width: 50px;
+  z-index: 2;
+  transform: translate(10px, 10px);
+}
+
+.img-man {
+  align-self: center;
+  justify-self: center;
+  z-index: 3; /* Øverste lag */
+  border-radius: 8px;
+}
+</style>

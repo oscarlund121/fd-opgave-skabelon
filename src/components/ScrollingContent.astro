@@ -1,37 +1,88 @@
 ---
 // @ts-nocheck
 import ScrollingCard from "./ScrollingCard.astro";
+import ArrowRight from "../icons/arrow--right.svg";
+import ArrowLeft from "../icons/arrow-left.svg";
 ---
 
 <section>
-  <div>
-    <h2>Financial Projections</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
-    </p>
-      <img src="../src/icons/arrow--right.svg" alt="" />
-      <img src="../src/icons/arrow-left.svg" alt="" />
-  </div>
-  <div>
-    <ScrollingCard />
-  </div>
+  <header>
+    <div class="flow">
+      <h2>Financial Projections</h2>
+      <p>
+        Financial projections are essential for planning and monitoring a
+        company’s performance. They provide insights into potential revenue,
+        expenses, and profitability over specific periods.
+      </p>
+    </div>
+    <div class="navigation-buttons">
+      <button>
+        <ArrowLeft class="bars"/>
+      </button>
+      <button>
+        <ArrowRight class="bars"/>
+      </button>
+    </div>
+  </header>
+  <ScrollingCard />
 </section>
 
 <style>
+
+  @container (width > 600px) {
+ header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; 
+  margin-bottom: 50px;
+ 
+}
   section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr[content] minmax(0, var(--content-width)) 1fr;
+    background-color: #f5f5f5;
+    padding-block: 10rem;
 
-    h2 {  
-      font-size: var(--h2-font-size);
-      font-family: var(--font-family-h);
-      font-weight: bold;
+    > * {
+      grid-column: content; /* man kan også bruge 2 (tallet) */
     }
 
- 
+    h2 {
+      font-size: var(--h2-font-size);
+      font-weight: bold;
+    }
   }
+
+
+.navigation-buttons {
+  display: flex;
+  place-self: end end;
+  gap: 3rem;
+}
+
+button {
+  background-color: black;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: yellow;
+}
+
+  .bars {
+    color: white;
+  } 
+
+  .bars:hover {
+    color: black;
+  }
+
+}
+
+
+
 </style>

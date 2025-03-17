@@ -6,15 +6,37 @@
   --h1-font-size: 35px;
   --h2-font-size: 2rem;
   --h3-font-size: 1.75rem;
-  --h4-font-size: 1.1rem;
+  --h4-font-size: 0.8rem;
   --p-font-size: 14px;
   --p-line-height: 1.5;
   --p-letter-spacing: 0.5px;
 
   /* Colors */
   --background-color: white;
-  --font-color-1: white;
+  --font-color-w: white;
+  --font-color-b: black;
   --service-card-color: rgba(38, 38, 38, 0.9);
+
+  --content-width: 1200px;
+  --card-gap: 2rem;
+  --card-border-radius: 20px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) [content-start] minmax(0, 1200px) [content-end] minmax(20px, 1fr);
+
+  > * {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: subgrid;
+
+    > * {
+      grid-column: content;
+    }
+  }
+
 }
 
 
