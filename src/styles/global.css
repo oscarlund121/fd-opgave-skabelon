@@ -5,9 +5,9 @@
 
   --h1-font-size: 35px;
   --h2-font-size: 2rem;
-  --h3-font-size: 1.75rem;
+  --h3-font-size: 25px;
   --h4-font-size: 0.8rem;
-  --p-font-size: 14px;
+  --p-font-size: 16px;
   --p-line-height: 1.5;
   --p-letter-spacing: 0.5px;
 
@@ -15,6 +15,7 @@
   --background-color: white;
   --font-color-w: white;
   --font-color-b: black;
+  --font-color-g: #595566;
   --service-card-color: rgba(38, 38, 38, 0.9);
 
   --content-width: 1200px;

@@ -17,4 +17,12 @@
       --flow-space: 0.25rlh;
     }
   }
+
+  div {
+    --flow-space: 1.5rlh;
+  }
+
+  a{
+    --flow-space: 2rlh;
+  }
 }

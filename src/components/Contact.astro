@@ -1,0 +1,142 @@
+---
+import Phone from "../icons/phone.svg";
+import Clock from "../icons/clock.svg";
+import Pin from "../icons/pin.svg";
+---
+
+<section>
+  <article>
+    <div class="flow">
+      <h4>PROCCESS</h4>
+      <h2>Contact Us. It's Easy</h2>
+      <p>
+        Leverage agile frameworks to provide a robust synopsis for high level
+        overviews. Iterative approaches to corporate strategy foster
+        collaborative.
+      </p>
+      <ul>
+        <li>
+          <Phone />
+          <p>Call Today</p>
+          <p>+1 800 100 900</p>
+        </li>
+      </ul>
+      <!--   <div class="info-container flow">
+        <Phone class="phone"/>
+        <div>
+          <p>Call Today</p>
+          <p>+1 800 100 900</p>
+        </div>
+      </div>
+      <div class="info-container flow">
+        <Clock class="clock"/>
+        <div>
+          <p>Call Today</p>
+          <p>+1 800 100 900</p>
+        </div>
+      </div>
+      <div class="info-container flow">
+        <Pin class="pin"/>
+        <div>
+          <p>Call Today</p>
+          <p>+1 800 100 900</p>
+        </div>
+      </div>
+    </div> -->
+      <div></div>
+    </div>
+  </article>
+
+  <style>
+    section {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+    article {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+
+      h4 {
+        display: inline-block;
+        font-size: var(--h4-font-size);
+        background-color: yellow;
+        border-radius: 25px;
+        padding: 0 10px;
+      }
+      h2 {
+        font-size: var(--h2-font-size);
+        font-weight: bold;
+      }
+
+      p {
+        font-size: var(--p-font-size);
+        font-family: var(--font-family-h);
+      }
+    }
+
+  /*   ul {
+      display: grid;
+      gap: 1rem;
+      line-height: 1.5lh;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      font-size: 1rem;
+      color: #595566;
+    }
+
+    li:before {
+      content: "";
+      width: 1.6rem;
+      height: 1lh;
+      background: var(--checkmark-icon) 50% 50% / 100% auto no-repeat;
+      background-position: 50% 50%;
+      background-size: 100% auto;
+    } */
+
+        .info-container {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      line-height: 1.5lh;
+      background-position: 50% 50%;
+    }
+
+    .info-container svg {
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .info-container div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-container p:last-of-type {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .phone {
+      background-color: #ffecbb;
+      color: #deaa27;
+    }
+    .clock {
+      background-color: #a4eda4;
+      color: #4eaf4e;
+    }
+    .pin {
+      background-color: #eaeaea;
+      color: #181818;
+    }
+  </style>
+</section>
