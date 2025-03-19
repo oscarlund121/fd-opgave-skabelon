@@ -13,14 +13,20 @@
 
   /* Colors */
   --background-color: white;
+  --background-color-y: #FBC336;
+  --background-color-b: #141414;
+  --background-color-g: #F5F5F5;
   --font-color-w: white;
   --font-color-b: black;
   --font-color-g: #595566;
   --service-card-color: rgba(38, 38, 38, 0.9);
+  --card-bg-color: #FFFFFF;
 
   --content-width: 1200px;
   --card-gap: 2rem;
   --card-border-radius: 20px;
+
+  --section-pd-block: 100px;
 }
 
 body {

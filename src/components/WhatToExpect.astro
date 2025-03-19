@@ -1,23 +1,22 @@
 ---
 import Checkmark from "../icons/checkmark.svg";
+import InfoSection from "./InfoSection.astro";
 ---
 
 <section>
   <article>
+    <figure>
+      <img src="images/patternwhat.svg" alt="Mønster baggrund" />
+      <img src="images/maninoffice.jpg" alt="Person i kontor" />
+    </figure>
     <div>
-      <figure>
-        <img src="images/patternwhat.svg" alt="Mønster baggrund" />
-        <img src="images/maninoffice.jpg" alt="Person i kontor" />
-      </figure>
-    </div>
-    <div>
-      <h1>What To Expect</h1>
-      <p>
-        Our collaboration is built on transparency, efficiency, and measurable
-        results. Together, we create strategies tailored to your unique needs
-        and goals.
-      </p>
-      <ul>
+      <InfoSection
+        tag="GROWING WITH OUR CLIENTS"
+        title="What To Expect"
+        text="Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals."
+        variant="default"
+      />
+      <ul class="flow">
         <li>
           Collaborate to build actionable strategies that drive sustainable
           growth and deliver tangible outcomes.
@@ -38,7 +37,8 @@ import Checkmark from "../icons/checkmark.svg";
   section {
     display: grid;
     grid-template-columns: subgrid;
-    align-items: center;
+
+    padding: 100px 360px;
 
     article {
       display: grid;
@@ -76,63 +76,105 @@ import Checkmark from "../icons/checkmark.svg";
         width: 450px;
         margin-left: 70px;
         margin-top: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
       }
     }
 
     div {
-      h1 {
-        margin-bottom: 1.5rem;
-        font-size: 2.5rem;
-        color: #333;
-      }
 
-      h1::before {
-        content: "WE'LL WORK WITH YOU";
-        display: block;
-        font-size: 0.8rem;
-        background: #ffcc33;
-        color: #333;
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        width: fit-content;
-        margin-bottom: 0.5rem;
-        font-weight: normal;
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 2rem;
-      }
-
-      /* Tilføj checkmark points som i det originale billede */
-      p::after {
-        margin-top: 2rem;
-      }
-      p + ul li {
+      ul li {
         position: relative;
-        padding-left: 2rem;
-        margin-bottom: 1rem;
-        line-height: 1.4;
       }
 
-      p + ul li::before {
+      ul li::before {
         content: var(--checkmark-icon);
         position: absolute;
-        left: 0;
-        top: 0.2rem;
+        left: -2.5rem;
+        top: 0.5rem;
         width: 20px;
         height: 20px;
+        padding-left: 0;
 
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        
         color: white;
       }
     }
   }
+
+  @media (max-width: 1000px) {
+  section {
+    padding: 60px 40px;
+    
+    article {
+      display: flex;
+      flex-direction: column;
+    }
+
+    figure {
+      order: 2; /* Flytter figure ned under teksten */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+
+      &::before {
+        display: none;
+      }
+      
+      :first-of-type {
+        display: none;
+      }
+
+      :last-of-type {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        max-width: 600px; /* Begrænser billedets størrelse */
+      }
+    }
+    
+    div {
+      width: 100%;
+      text-align: left;
+      gap: 1rem;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    ul li::before {
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+/* Mobile responsivity */
+@media (max-width: 576px) {
+  section {
+    padding: 40px 20px;
+    
+    figure :last-of-type {
+      max-width: 100%;
+    }
+    
+    div ul li {
+      padding-left: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    div ul li::before {
+      left: 0;
+      top: 0.3rem;
+    }
+  }
+}
+
 </style>

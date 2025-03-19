@@ -2,27 +2,40 @@
 
 
 .flow {
+  /* Grundlæggende mellemrum mellem alle elementer */
   > * + * {
     margin-block-start: var(--flow-space, 0.5rlh);
   }
 
-  h1 {
+  /* Specifik mellemrum for h1 elementer */
+  > h1 {
     --flow-space: 2rlh;
   }
 
-  p {
+  /* Specifik mellemrum for p elementer */
+  > p {
     --flow-space: 1rlh;
 
+    /* Mindre mellemrum efter p elementer når de følges af et andet element */
     + * {
       --flow-space: 0.25rlh;
     }
   }
 
-  div {
+  /* Specifik mellemrum for div elementer */
+  > div {
     --flow-space: 1.5rlh;
   }
 
-  a{
+  /* Specifik mellemrum for a elementer */
+  > a {
     --flow-space: 2rlh;
+  }
+
+  
+  > li, 
+  > ul > li, 
+  > ol > li {
+    --flow-space: 1rlh;
   }
 }

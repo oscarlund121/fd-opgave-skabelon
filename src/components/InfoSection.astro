@@ -1,0 +1,70 @@
+---
+// @ts-nocheck
+const { tag, title, text, variant } = Astro.props;
+---
+
+<section class="flow" data-variant={variant}>
+  <h4 data-tag>{tag}</h4>
+  <h2>{title}</h2>
+  <p>{text}</p>
+</section>
+
+<style>
+  /* Styling baseret på data-variant */
+  [data-variant="default"] {
+    
+    color: black;
+    text-align: left;
+    border-radius: 10px;
+  }
+
+  [data-variant="dark"] {
+    color: white;
+    background-color: var(--background-color-b);
+  }
+
+  [data-variant="highlight"] {
+    background: var(--background-color);
+    color: black;
+  }
+
+  /* Styling af h4 (tag) */
+  h4[data-tag] {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: var(--h4-font-size);
+    border-radius: 20px;
+  }
+
+  /* Dynamiske tag-farver baseret på variant */
+  [data-variant="dark"] h4[data-tag] {
+    color: black;
+    background-color: var(--background-color-y);
+  }
+  [data-variant="default"] h4[data-tag] {
+    color: black;
+    background-color: var(--background-color-y);
+
+  }
+  [data-variant="highlight"] h4[data-tag] {
+    --tag-bg: green;
+  }
+
+  h2 {
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+    padding-inline-end: 10%;
+  }
+
+  p {
+    font-size: var(--p-font-size);
+    color: inherit;
+    
+  }
+
+  @media (max-width: 800px) {
+    h2, p {
+      padding-inline-end: 0;
+    }
+  }
+</style>

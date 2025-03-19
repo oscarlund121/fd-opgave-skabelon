@@ -1,0 +1,37 @@
+---
+import ValueCard from "./ValueCard.astro";
+import InfoSection from "./InfoSection.astro";
+
+const { variant = "dark" } = Astro.props; // Standard er "dark"
+---
+
+<section data-variant={variant}>
+  <div>
+    <InfoSection
+      tag="GROWING WITH OUR CLIENTS"
+      title="Our core values & principles"
+      text="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
+      variant="default"
+    />
+    <ValueCard />
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: subgrid;
+    padding: 100px 360px;
+  }
+
+  /* 🔹 Dynamiske baggrunds- og tekstfarver */
+  [data-variant="dark"] {
+    background-color: var(--background-color-b);
+    color: var(--font-color-w);
+  }
+
+  [data-variant="light"] {
+    background-color: var(--background-color-g);
+    color: var(--font-color-b);
+  }
+</style>

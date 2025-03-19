@@ -5,15 +5,17 @@ const experienceData = await fetch(
 ).then((response) => response.json());
 
 console.log(experienceData);
+import InfoSection from "./InfoSection.astro";
 ---
 
 <div class="container">
 <section>
-  <div class="flow">
-    <h4>EXPERIENCE</h4>
-    <h2>{experienceData.heading}</h2>
-    <p>{experienceData.subheading}</p>
-  </div>
+  <InfoSection 
+  tag="EXPERIENCE"
+  title="More than 25 years of experience"
+  text="3000+ our clients are insured around the World"
+  tagColor="white"
+/>
 
   
   <ul class="stats">
@@ -26,7 +28,7 @@ console.log(experienceData);
           </li>
         </>
       ))
-    }
+    } 
   </ul>
 </section>
 </div>
@@ -128,4 +130,66 @@ console.log(experienceData);
       offset-anchor: 50% calc(50% - var(--border-width) / 2);
     }
   }
+
+  @media (max-width: 1024px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    section {
+        padding-block: 60px;
+    }
+    
+    .stats {
+        gap: 3rem;
+    }
+    
+    .stat {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        gap: 3rem;
+        padding-block: 50px;
+        
+        div {
+            max-width: 100%;
+        }
+    }
+    
+    .stats {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    section {
+        padding-block: 40px;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    .stat-container {
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .stat {
+        width: 80px;
+        margin-bottom: 0;
+    }
+}
 </style>

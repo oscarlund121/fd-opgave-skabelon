@@ -1,0 +1,65 @@
+---
+// @ts-nocheck
+export async function getStaticPaths() {
+  const url = "https://frontend-design-theme.netlify.app/api/employees";
+
+  const employees = await fetch(url).then((res) => res.json());
+
+  return employees.map((employee) => ({
+    params: { slug: employee.slug },
+    props: { employee },
+  }));
+}
+const { slug } = Astro.params;
+const { employee } = Astro.props;
+
+
+---
+
+<head>
+  <title>{employee.name} - Profile</title>
+</head>
+
+<section class="profile">
+  <img src={employee.img} alt={employee.name} />
+  <h1>{employee.name}</h1>
+  <h2>{employee.title}</h2>
+  <p>{employee.description}</p>
+
+  <div class="social-links">
+    {employee.social_links.map((link) => (
+      <a href={link.url} set:html={link.icon}></a>
+    ))}
+  </div>
+
+  <a href="/employees" class="back-button">Tilbage til teamet</a>
+</section>
+
+<style>
+  .profile {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .back-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+</style>

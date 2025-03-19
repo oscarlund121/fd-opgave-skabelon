@@ -21,18 +21,15 @@ const servicesData = await fetch(
 <style>
   @layer components {
     ul {;
-      position: absolute;
+  
       gap: 1rlh;
       display: grid;
       justify-self: center;
-      margin-block: 45vh;
       color: white;
       grid-template-columns: repeat(3, 1fr);
 
       li {
-        grid-row: span 3;
-        display: grid;
-        grid-template-rows: subgrid;
+       
         gap: 10px;
         background: var(--service-card-color);
         padding: 2rem;

@@ -4,10 +4,6 @@ import Button from "./Button.astro";
 ---
 
 <section class="hero">
-  <article>
-    <figure>
-      <img src="../src/assets/pattern.svg" alt="" />
-    </figure>
     <div class="flow">
       <h1>Empowering Your Business Growth</h1>
       <p>
@@ -19,8 +15,9 @@ import Button from "./Button.astro";
       <Button variant="primary" />  -->
       <Button variant="book">Book a Meeting</Button>
     </div>
-  </article>
+    <div>
   <img src="images/Photo.jpg" alt="" />
+</div>
   <Services />
 </section>
 
@@ -28,26 +25,20 @@ import Button from "./Button.astro";
   
   .hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
     background-color: #181818;
+
+    > * {
+      grid-column: 1 / -1;
+    }
     
-
-    article {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      margin-block-start: 80px;
-      gap: 20px;
-      color: white;
-      padding-right: 50px;
-     
-
-      figure, img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        max-width: 120px;
-        margin-block: 25px;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      bottom: 25%;
+      background-color: #4eaf4e;
+      z-index: -1;
 
       }
       h1 {
