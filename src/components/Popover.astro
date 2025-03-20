@@ -23,7 +23,7 @@ import Button from "./Button.astro";
 
 <style>
   div {
-    display: flex;
+   
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
@@ -33,6 +33,11 @@ import Button from "./Button.astro";
     max-width: 450px;
     border-radius: var(--card-border-radius);
     padding-block: 25px;
+
+    &:popover-open {
+      display: flex;
+    
+    }
 
     h2 {
       font-size: var(--h2-font-size);

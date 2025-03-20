@@ -16,6 +16,7 @@
   --background-color-y: #FBC336;
   --background-color-b: #141414;
   --background-color-g: #F5F5F5;
+  --background-color-green: #F5F5F5;
   --font-color-w: white;
   --font-color-b: black;
   --font-color-g: #595566;
@@ -26,11 +27,13 @@
   --card-gap: 2rem;
   --card-border-radius: 20px;
 
+  --padding-block: 50px;
+
   --section-pd-block: 100px;
 }
 
 body {
-  overflow-x: hidden;
+  
   display: grid;
   grid-template-columns: minmax(20px, 1fr) [content-start] minmax(0, 1200px) [content-end] minmax(20px, 1fr);
 
@@ -44,7 +47,12 @@ body {
       grid-column: content;
     }
   }
+  
+  
+}
 
+.full-bleed {
+  grid-column: 1 / -1;
 }
 
 

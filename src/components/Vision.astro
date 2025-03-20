@@ -33,6 +33,7 @@ import InfoSection from "./InfoSection.astro";
   section{
     display: grid;
     grid-template-columns: subgrid;
+    padding-block: 50px;
 
   article {
       display: grid;
@@ -78,5 +79,78 @@ import InfoSection from "./InfoSection.astro";
       }
     }
   }
+  @media (max-width: 1000px) {
+    section {
+      padding: 60px 40px;
 
+      article {
+        display: flex;
+        flex-direction: column;
+      }
+
+      figure {
+        order: 2; 
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        &::before {
+          display: none;
+        }
+
+        :first-of-type {
+          display: none;
+        }
+
+        :last-of-type {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 0;
+          max-width: 600px; /* Begrænser billedets størrelse */
+        }
+      }
+
+      div {
+        width: 100%;
+        text-align: left;
+        gap: 1rem;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      ul li {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      ul li::before {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  /* Mobile responsivity */
+  @media (max-width: 576px) {
+    section {
+      padding: 40px 20px;
+
+      figure :last-of-type {
+        max-width: 100%;
+      }
+
+      div ul li {
+        padding-left: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      div ul li::before {
+        left: 0;
+        top: 0.3rem;
+      }
+    }
+  }
 </style>

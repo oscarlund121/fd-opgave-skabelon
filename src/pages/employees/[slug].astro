@@ -1,5 +1,6 @@
 ---
 // @ts-nocheck
+import Layout from '../../layouts/Layout.astro';
 export async function getStaticPaths() {
   const url = "https://frontend-design-theme.netlify.app/api/employees";
 
@@ -10,11 +11,11 @@ export async function getStaticPaths() {
     props: { employee },
   }));
 }
-const { slug } = Astro.params;
 const { employee } = Astro.props;
 
 
 ---
+<Layout>
 
 <head>
   <title>{employee.name} - Profile</title>
@@ -34,7 +35,7 @@ const { employee } = Astro.props;
 
   <a href="/employees" class="back-button">Tilbage til teamet</a>
 </section>
-
+</Layout>
 <style>
   .profile {
     max-width: 600px;
