@@ -8,6 +8,7 @@ const { variant = "secondary" } = Astro.props;
 
 <style>
   [data-variant="primary"] {
+    display: inline-block;
     background: yellow;
     color: white;
     border-radius: 25px;
@@ -20,6 +21,7 @@ const { variant = "secondary" } = Astro.props;
     background: black;
     color: white;
     width: fit-content;
+    height: fit-content;
     border-radius: 25px;
     padding: 15px 20px;
     font-family: var(--font-family-p);
@@ -32,6 +34,18 @@ const { variant = "secondary" } = Astro.props;
     border-radius: 25px;
     padding: 15px 20px;
     margin-block: 1rlh;
+    font-family: var(--font-family-p);
+    font-size: var(--p-font-size);
+  }
+  
+  [data-variant="dash"] {
+    display: inline-block;
+    background: var(--background-color-y);
+    color: black;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 25px;
+    padding: 10px 20px;
     font-family: var(--font-family-p);
     font-size: var(--p-font-size);
   }

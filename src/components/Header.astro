@@ -1,23 +1,23 @@
 ---
 // @ts-nocheck
+import Popover from "./Popover.astro";
 ---
 
 <header class="full-bleed">
   <nav>
     <h3>AskExperts</h3>
     <ul>
-      <li>Home</li>
-      <li>Case Study</li>
-      <li>Team</li>
-      <li>About</li>
+      <a href="/"><li>Home</li></a>
+      <a href="/casestudy"><li>Case Study</li></a>
+      <a href="/team"><li>Team</li></a>
+      <a href="/about"><li>About</li></a>
     </ul>
-    <button>Login</button>
+    <Popover />
   </nav>
 </header>
 
 <style>
-
-header {
+  header {
     background-color: var(--service-card-color);
     padding: 0;
     margin: 0;
@@ -27,7 +27,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     width: 100%;
     color: white;
     font-size: var(--p-font-size);
@@ -43,22 +43,16 @@ header {
       gap: 20px;
       li {
         list-style: none;
+        color: white;
       }
     }
 
-    
-
-  button{
-    background: yellow;
-    border: none;
-    color: black;
-    border-radius: 25px;
-    padding: 5px 20px;
+    button {
+      background: yellow;
+      border: none;
+      color: black;
+      border-radius: 25px;
+      padding: 5px 20px;
+    }
   }
-  }
-
-
-
-
-
 </style>

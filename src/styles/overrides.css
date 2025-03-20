@@ -32,6 +32,12 @@
     --flow-space: 2rlh;
   }
 
+  > form {
+    --flow-space: 1rlh
+  }
+  
+  
+
   
   > li, 
   > ul > li, 

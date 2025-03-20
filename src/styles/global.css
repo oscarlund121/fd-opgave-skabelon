@@ -30,6 +30,7 @@
 }
 
 body {
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: minmax(20px, 1fr) [content-start] minmax(0, 1200px) [content-end] minmax(20px, 1fr);
 
@@ -54,4 +55,9 @@ a {
 ul {
   list-style: none;
 }
+
+h2 {
+  line-height: 1.5;
+}
+
 

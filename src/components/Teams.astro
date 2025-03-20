@@ -1,0 +1,52 @@
+---
+import TeamCard from "./TeamCard.astro";
+import InfoSection from "./InfoSection.astro";
+import Button from "./Button.astro";
+---
+
+<section>
+  <article>
+    <div>
+      <InfoSection
+        title="Meet Our Great Team"
+        text="Welcome to our amazing team! We are a group of passionate individuals dedicated to excellence and innovation. Each member brings unique skills and experiences, working together to achieve our goals. Join us as we embark on exciting projects and create lasting impacts."
+        variant="default"
+      />
+      <Button class="button" variant="secondary">Join Our Team</Button>
+    </div>
+    <TeamCard />
+  </article>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: subgrid;
+
+    
+      div {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+      }
+  
+
+    .button {
+      justify-self: end;
+    }
+  }
+
+  @media (width < 800px) {
+
+    section {
+
+    div {
+    display: flex;
+    flex-direction: column;
+
+ 
+  }
+}
+
+}
+</style>

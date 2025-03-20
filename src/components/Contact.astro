@@ -9,12 +9,12 @@ import InfoSection from "./InfoSection.astro";
 <section>
   <article>
     <div class="flow">
-      <InfoSection 
-      tag="PROCESS"
-      title="Contact Us. It's Easy"
-      text="Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative."
-      variant="default"
-    />
+      <InfoSection
+        tag="PROCESS"
+        title="Contact Us. It's Easy"
+        text="Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative."
+        variant="default"
+      />
       <div class="info-container">
         <Phone class="phone" />
         <div>
@@ -44,6 +44,17 @@ import InfoSection from "./InfoSection.astro";
 </section>
 
 <style>
+  @media (max-width: 800px) {
+section{
+    article {
+      grid-template-columns: 1fr;
+     
+
+    }
+  }
+}
+
+
   section {
     display: grid;
     grid-template-columns: subgrid;
@@ -54,7 +65,6 @@ import InfoSection from "./InfoSection.astro";
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
-  
 
     h4 {
       display: inline-block;
@@ -79,7 +89,6 @@ import InfoSection from "./InfoSection.astro";
     display: grid;
     grid-template-columns: auto 1fr;
     line-height: 1.5lh;
-    
   }
 
   .info-container svg {

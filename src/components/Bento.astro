@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section class="bento">
@@ -13,11 +14,27 @@
   <div class="card image-3">
     <img src="images/hands.jpg" alt="" />
   </div>
-
-
 </section>
 
 <style>
+  @media (max-width: 800px) {
+    .bento {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "image-1"
+        "image-2"
+        "image-3";
+        margin-block-start: 50px;
+      :before,
+      :after {
+        display: none;
+      }
+    }
+  
+
+  }
+
   .bento {
     display: grid;
     position: relative;
@@ -50,7 +67,7 @@
         z-index: -1;
       }
 
-       &::after {
+      &::after {
         position: absolute;
         top: -50px;
         right: 50px;
@@ -60,10 +77,9 @@
         object-fit: contain;
         z-index: -2;
       }
-
     }
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -72,7 +88,7 @@
 
     .card {
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      
     }
   }
 </style>
