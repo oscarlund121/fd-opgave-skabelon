@@ -46,4 +46,4 @@ På den måde påvirker det ikke resten af siden.
 
 
 PS 
-(Mine checkmarks på Checklist.astro vises ikke på chrome, men gør i live-server...)
+(Mine checkmarks på Checklist.astro vises ikke på chrome, men gør i live-server... ved ikke hvad jeg skulle gøre.)
