@@ -43,3 +43,7 @@ Komponentspecifik CSS (i .astro-filer):
 Hvis en style kun gælder for én komponent, har jeg lagt den direkte i .astro-filen i et <style>-tag.
 
 På den måde påvirker det ikke resten af siden.
+
+
+PS 
+(Mine checkmarks på Checklist.astro vises ikke på chrome, men gør i live-server...)
