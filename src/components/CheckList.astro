@@ -1,6 +1,7 @@
 ---
 //@ts-nocheck
 const { items = [] } = Astro.props;
+import Checkmark from "../icons/checkmark.svg";
 ---
 
 <ul class="flow">
@@ -10,7 +11,7 @@ const { items = [] } = Astro.props;
 <style>
   @layer components {
     :root {
-      --checkmark-icon: url("images/checkmark.svg");
+      --checkmark-icon: <Checkmark / >;
     }
     ul {
       display: grid;
