@@ -33,9 +33,9 @@
 }
 
 body {
-  
+  overflow-x: hidden;
   display: grid;
-  grid-template-columns: minmax(20px, 1fr) [content-start] minmax(0, 1200px) [content-end] minmax(20px, 1fr);
+  grid-template-columns: minmax(20px, 1fr) [content-start] minmax(0, 600px) [x] minmax(0, 600px) [content-end] minmax(20px, 1fr);
 
   > * {
     grid-column: 1 / -1;

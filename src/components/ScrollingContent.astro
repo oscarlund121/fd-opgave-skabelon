@@ -28,21 +28,48 @@ import ArrowLeft from "../icons/arrow-left.svg";
 </section>
 
 <style>
+  @media (max-width: 800px) {
+    section{
+    header {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "text"
+        "navigation";
+      justify-items: center;
+      gap: 1rem;
+    }
+
+    h2 {
+      grid-area: title;
+    }
+
+    p {
+      grid-area: text;
+    }
+
+    .navigation-buttons {
+      grid-area: navigation;
+    }
+
+    .navigation-buttons {
+    display: flex;
+    place-self: start;
+    gap: 3rem;
+  }
+  }
+}
   header {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     margin-bottom: 50px;
-   
   }
   section {
     display: grid;
-    grid-template-columns: 1fr[content] minmax(0, var(--content-width)) 1fr;
+    grid-template-columns: subgrid;
     background-color: #f5f5f5;
     padding-block: var(--padding-block);
-
-    > * {
-      grid-column: content; 
-    }
 
     h2 {
       font-size: var(--h2-font-size);
@@ -76,5 +103,4 @@ import ArrowLeft from "../icons/arrow-left.svg";
   .bars {
     color: white;
   }
-
 </style>

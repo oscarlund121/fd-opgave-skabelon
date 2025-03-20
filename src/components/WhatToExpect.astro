@@ -18,12 +18,11 @@ import CheckList from "./CheckList.astro";
         variant="default"
       />
       <CheckList
-      items={[
-        "Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.",
-        "Identify opportunities to optimize processes and implement impactful solutions with measurable results."
-      ]}
-  />
-  
+        items={[
+          "Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.",
+          "Identify opportunities to optimize processes and implement impactful solutions with measurable results.",
+        ]}
+      />
     </div>
   </article>
 </section>
@@ -33,7 +32,7 @@ import CheckList from "./CheckList.astro";
     display: grid;
     grid-template-columns: subgrid;
     padding-block: var(--padding-block);
-  
+
     article {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -42,6 +41,7 @@ import CheckList from "./CheckList.astro";
     figure {
       position: relative;
       padding-top: 3rem;
+      grid-column: 1;
 
       &::before {
         content: "";
@@ -68,14 +68,17 @@ import CheckList from "./CheckList.astro";
         position: relative;
         z-index: 2;
         width: 450px;
-        margin-left: 70px;
-        margin-top: 20px;
+        justify-self: center;
         border-radius: 12px;
       }
     }
+    div {
+      grid-column: 2;
+      grid-row: 1;
+    }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width:900px) {
     section {
       padding: 60px 40px;
 
@@ -85,7 +88,7 @@ import CheckList from "./CheckList.astro";
       }
 
       figure {
-        order: 2; 
+        order: 2;
         width: 100%;
         display: flex;
         justify-content: center;

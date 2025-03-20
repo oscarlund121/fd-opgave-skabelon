@@ -1,6 +1,6 @@
 ---
 // @ts-nocheck
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
   const url = "https://frontend-design-theme.netlify.app/api/employees";
 
@@ -12,55 +12,150 @@ export async function getStaticPaths() {
   }));
 }
 const { employee } = Astro.props;
-
-
 ---
+
 <Layout>
+  <section>
+    <figure>
+      <div class="background-pattern"></div>
+      <img src={employee.img} alt={employee.name} />
+    </figure>
 
-<head>
-  <title>{employee.name} - Profile</title>
-</head>
+    <div class="profile-content">
+      <div class="info">
+        <div class="name-wrapper">
+          <h1>{employee.name}</h1>
+          <div class="border"></div>
+          <div class="social-links">
+            {
+              employee.social_links.map((link) => (
+                <a href={link.url} set:html={link.icon} />
+              ))
+            }
+          </div>
+        </div>
+        <h4>{employee.title}</h4>
+        <p>{employee.description_long}</p>
+      </div>
 
-<section class="profile">
-  <img src={employee.img} alt={employee.name} />
-  <h1>{employee.name}</h1>
-  <h2>{employee.title}</h2>
-  <p>{employee.description}</p>
-
-  <div class="social-links">
-    {employee.social_links.map((link) => (
-      <a href={link.url} set:html={link.icon}></a>
-    ))}
-  </div>
-
-  <a href="/employees" class="back-button">Tilbage til teamet</a>
-</section>
+      <div class="past-experience">
+        <h3>Past experience</h3>
+        <p>{employee.past_experience}</p>
+      </div>
+    </div>
+  </section>
 </Layout>
+
 <style>
-  .profile {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
+  section {
+    display: grid;
+    grid-template-columns: subgrid;
+    padding-block: var(--section-pd-block);
+    gap: 2rem;
   }
 
-  img {
-    width: 100%;
-    border-radius: 10px;
+  figure {
+    position: relative;
+    grid-column: content-start / x;
+
+    .background-pattern {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: url("/images/patternwhat.svg") no-repeat;
+      top: -50px;
+      left: -50px;
+      z-index: -1;
+    }
+
+    img {
+      z-index: 2;
+      border-radius: 12px;
+      justify-self: center;
+    }
   }
 
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  .profile-content {
+    grid-column: x / content-end;
+
+    .info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 1rem;
+
+      .name-wrapper {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        border-right: 1px solid #c1c1c1;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+
+        a {
+          color: black;
+        }
+      }
+
+      h4 {
+        font-size: var(--h4-font-size);
+        grid-column: 1 / -1;
+      }
+
+      p {
+        font-size: var(--p-font-size);
+      }
+    }
+
+    .past-experience {
+      border-top: 1px solid #c1c1c1;
+      margin-block: 25px;
+      padding-block: 25px;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
   }
 
-  .back-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+  @media (width < 900px) {
+    section {
+      grid-template-columns: 1fr;
+    
+      padding-inline: 20px;
+    }
+
+    figure {
+      grid-column: 1;
+      justify-content: center;
+
+      .background-pattern {
+        display: none;
+      }
+
+      img {
+        width: 400px;
+      }
+    }
+
+    .profile-content {
+      grid-column: 1;
+
+      .info {
+       grid-column: content;
+        text-align: left;
+      }
+
+    }
   }
 </style>
