@@ -3,7 +3,7 @@ FD-OPGAVE-SKABELON
 
 Udfordringer:
 
-Generelle udfordringer: Jeg har haft udfordringer hele vejen igennem projektet, både med opsætning, styling og struktur. Det er svært at pege på én ting, der virkelig træder frem, men samlet set har det været en lærerig opgave.
+Generelle udfordringer: Jeg har haft udfordringer hele vejen igennem projektet, både med opsætning, styling og struktur. Det er svært at pege på én ting, der virkelig træder frem, men samlet set har det været en lærerig opgave. 
 
 Tidspres: Som altid var tid en hindring. Jeg nåede ikke at lave alle sider færdige, og der er stadig nogle mangler på visse komponenter.
 
@@ -19,7 +19,7 @@ Dynamisk komponentstruktur: Jeg har brugt Astro-komponenter til at genbruge kode
 
 Kodeeksempler:
 
-Her er et eksempel på, hvordan jeg har brugt Astro-komponenter:
+Her er eksempeler på, hvordan jeg har brugt CSS:
 
 Data-varianter: InfoSection.astro -> Dette komponenter har jeg implementeret på adskellige sektioner. Jeg har både kunne style farve, tekst og generel styling af komponentet. 
 

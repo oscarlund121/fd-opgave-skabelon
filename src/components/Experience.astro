@@ -9,46 +9,44 @@ import InfoSection from "./InfoSection.astro";
 ---
 
 <div class="container">
-<section>
-  <InfoSection 
-  tag="EXPERIENCE"
-  title="More than 25 years of experience"
-  text="3000+ our clients are insured around the World"
-  variant="highlight"
-/>
+  <section>
+    <InfoSection
+      tag="EXPERIENCE"
+      title="More than 25 years of experience"
+      text="3000+ our clients are insured around the World"
+      variant="highlight"
+    />
 
-  
-  <ul class="stats">
-    {
-      experienceData.stats.map((stat) => (
-        <>
-          <li class="stat-container">
-            <div class="stat" style={`--percent: ${stat.value}`}></div>
-            <div>{stat.label}</div>
-          </li>
-        </>
-      ))
-    } 
-  </ul>
-</section>
+    <ul class="stats">
+      {
+        experienceData.stats.map((stat) => (
+          <>
+            <li class="stat-container">
+              <div class="stat" style={`--percent: ${stat.value}`} />
+              <div>{stat.label}</div>
+            </li>
+          </>
+        ))
+      }
+    </ul>
+  </section>
 </div>
 
 <style>
-
-
-.container {
+  .container {
     display: grid;
     grid-template-columns: subgrid;
     gap: 2rem;
     background-color: #fbc336;
     padding-block: var(--padding-block);
-}
+  }
 
   section {
+    gap: 5rem;
     display: flex;
     flex-direction: row;
     align-items: top;
-    justify-content:space-between;
+    justify-content: space-between;
     background-color: #fbc336;
     padding-block: 100px;
 
@@ -61,7 +59,6 @@ import InfoSection from "./InfoSection.astro";
         background-color: var(--background-color);
         border-radius: 25px;
         padding: 0 10px;
-        
       }
     }
   }
@@ -131,66 +128,33 @@ import InfoSection from "./InfoSection.astro";
     }
   }
 
-  @media (max-width: 1024px) {
-    .container {
-        padding: 1.5rem;
-    }
-    
-    section {
-        padding-block: 60px;
-    }
-    
-    .stats {
-        gap: 3rem;
-    }
-    
-    .stat {
-        width: 120px;
-    }
-}
 
-@media (max-width: 768px) {
-    section {
-        flex-direction: column;
-        gap: 3rem;
-        padding-block: 50px;
-        
-        div {
-            max-width: 100%;
-        }
-    }
-    
-    .stats {
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
+  @media (width < 900px) {
     .container {
-        padding: 1rem;
+     
     }
-    
+
     section {
       flex-direction: column;
-  
+
+      div {
+        max-width: 100%;
+      }
     }
-    
+
     .stats {
-        flex-direction: column;
-      
+      flex-direction: column;
     }
-    
+
     .stat-container {
-        flex-direction: row;
-        gap: 1rem;
-        width: 100%;
-        justify-content: flex-start;
-        text-align: left;
+      flex-direction: row;
+      gap: 1rem;
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
     }
-    
+
     .stat {
-        
-      
     }
-}
+  }
 </style>

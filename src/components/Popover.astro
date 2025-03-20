@@ -8,84 +8,77 @@ import Button from "./Button.astro";
   <h2>Dashboard Login</h2>
   <form>
     <label for="email">Email address</label>
-    <input type="email" id="email"  />
+    <input type="email" id="email" />
 
     <label for="password">Password</label>
-    <input
-      type="password"
-      id="password"
-      
-    />
-
+    <input type="password" id="password" />
   </form>
   <Button variant="dash">Go to dashboard</Button>
 </div>
 
 <style>
-  div {
-   
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    background-color: var(--background-color-b);
-    color: white;
-    width: 100%;
-    max-width: 450px;
-    border-radius: var(--card-border-radius);
-    padding-block: 25px;
+  @layer components {
+    div {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background-color-b);
+      color: white;
+      width: 100%;
+      max-width: 450px;
+      border-radius: var(--card-border-radius);
+      padding-block: 25px;
 
-    &:popover-open {
+      &:popover-open {
+        display: flex;
+      }
+
+      h2 {
+        font-size: var(--h2-font-size);
+      }
+    }
+
+    form {
       display: flex;
-    
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-inline: 100px;
+      width: 100%;
     }
 
-    h2 {
-      font-size: var(--h2-font-size);
+    label {
+      margin-block-start: 20px;
     }
-  }
+    input {
+      background-color: white;
+      border-radius: 5px;
+    }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    padding-inline: 100px;
-    width: 100%;
-  }
+    form *:last-child {
+      margin-block-end: 5px;
+    }
 
-  label {
-    margin-block-start: 20px;
-  }
-  input {
-    background-color: white;
-    border-radius: 5px;
+    ::backdrop {
+      background: #0003;
+      backdrop-filter: blur(10px);
+    }
 
-    
-  }
-
-  form *:last-child{
-    margin-block-end: 5px;
-  }
-
-  ::backdrop {
-    background: #0003;
-    backdrop-filter: blur(4px);
-  }
-
-  [popover] {
-    opacity: 0;
-    translate: 0 -100%;
-    transition: 0.6s;
-    transition-property: opacity, display, overlay, translate;
-    transition-behavior: allow-discrete;
-  }
-
-  :popover-open {
-    opacity: 1;
-    translate: 0 0;
-
-    @starting-style {
+    [popover] {
       opacity: 0;
-      translate: 0 100%;
+      translate: 0 -100%;
+      transition: 0.6s;
+      transition-property: opacity, display, overlay, translate;
+      transition-behavior: allow-discrete;
+    }
+
+    :popover-open {
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 100%;
+      }
     }
   }
 </style>

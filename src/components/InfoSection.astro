@@ -10,69 +10,67 @@ const { tag, title, text, variant } = Astro.props;
 </section>
 
 <style>
-  
-  [data-variant="default"] {
-    color: black;
-    text-align: left;
-    border-radius: 10px;
-  }
-  [data-variant="value"] {
-    color: white;
-    text-align: left;
-    border-radius: 10px;
-  }
-  [data-variant="dark"] {
-    color: white;
-    background-color: var(--background-color-b);
-  }
+  @layer components {
+    [data-variant="default"] {
+      color: black;
+      text-align: left;
+      border-radius: 10px;
+    }
+    [data-variant="value"] {
+      text-align: left;
+      border-radius: 10px;
+    }
+    [data-variant="dark"] {
+      color: white;
+      background-color: var(--background-color-b);
+    }
 
-  [data-variant="highlight"] {
-    color: black;
-  }
+    [data-variant="highlight"] {
+      color: black;
+    }
 
-  h4[data-tag] {
-    display: inline-block;
-    padding: 0 10px;
-    font-size: var(--h4-font-size);
-    border-radius: 20px;
-  }
+    h4[data-tag] {
+      display: inline-block;
+      padding: 0 10px;
+      font-size: var(--h4-font-size);
+      border-radius: 20px;
+    }
 
- 
-  [data-variant="dark"] h4[data-tag] {
-    color: black;
-    background-color: var(--background-color-y);
-  }
-  [data-variant="default"] h4[data-tag] {
-    color: black;
-    background-color: var(--background-color-y);
-  }
-  [data-variant="highlight"] h4[data-tag] {
-   color: black;
-   background-color: var(--background-color);
-  }
-  [data-variant="value"] h4[data-tag] {
-   color: black;
-   background-color: var(--background-color-y);
-  }
+    [data-variant="dark"] h4[data-tag] {
+      color: black;
+      background-color: var(--background-color-y);
+    }
+    [data-variant="default"] h4[data-tag] {
+      color: black;
+      background-color: var(--background-color-y);
+    }
+    [data-variant="highlight"] h4[data-tag] {
+      color: black;
+      background-color: var(--background-color);
+    }
+    [data-variant="value"] h4[data-tag] {
+      color: black;
+      background-color: var(--background-color-y);
+    }
 
-  section {
-    max-width: 650px;
-  }
-  h2 {
-    font-size: var(--h2-font-size);
-    font-weight: bold;
-    
-  }
+    section {
+      max-width: 650px;
+    }
+    h2 {
+      font-size: var(--h2-font-size);
+      font-weight: bold;
+    }
 
-  p {
-    font-size: var(--p-font-size);
-    color: inherit;
-  }
-
-  @media (max-width: 800px) {
-    h2,
     p {
-      padding-inline-end: 0;
+      font-size: var(--p-font-size);
+      color: inherit;
+    }
+
+    @media (max-width: 800px) {
+      h2,
+      p {
+        padding-inline-end: 0;
+      }
     }
   }
 </style>

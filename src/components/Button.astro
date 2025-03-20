@@ -7,46 +7,48 @@ const { variant = "secondary" } = Astro.props;
 </a>
 
 <style>
-  [data-variant="primary"] {
-    display: inline-block;
-    background: yellow;
-    color: white;
-    border-radius: 25px;
-    margin-top: 10px;
-    padding: 15px 20px;
-  }
+  @layer components {
+    [data-variant="primary"] {
+      display: inline-block;
+      background: yellow;
+      color: white;
+      border-radius: 25px;
+      margin-top: 10px;
+      padding: 15px 20px;
+    }
 
-  [data-variant="secondary"] {
-    display: inline-block;
-    background: black;
-    color: white;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 25px;
-    padding: 15px 20px;
-    font-family: var(--font-family-p);
-    font-size: var(--p-font-size);
-  }
-  [data-variant="book"] {
-    display: inline-block;
-    background: white;
-    color: black;
-    border-radius: 25px;
-    padding: 15px 20px;
-    margin-block: 1rlh;
-    font-family: var(--font-family-p);
-    font-size: var(--p-font-size);
-  }
-  
-  [data-variant="dash"] {
-    display: inline-block;
-    background: var(--background-color-y);
-    color: black;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-family: var(--font-family-p);
-    font-size: var(--p-font-size);
+    [data-variant="secondary"] {
+      display: inline-block;
+      background: black;
+      color: white;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 25px;
+      padding: 15px 20px;
+      font-family: var(--font-family-p);
+      font-size: var(--p-font-size);
+    }
+    [data-variant="book"] {
+      display: inline-block;
+      background: white;
+      color: black;
+      border-radius: 25px;
+      padding: 15px 20px;
+      margin-block: 1rlh;
+      font-family: var(--font-family-p);
+      font-size: var(--p-font-size);
+    }
+
+    [data-variant="dash"] {
+      display: inline-block;
+      background: var(--background-color-y);
+      color: black;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-family: var(--font-family-p);
+      font-size: var(--p-font-size);
+    }
   }
 </style>

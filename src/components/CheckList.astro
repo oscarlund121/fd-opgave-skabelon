@@ -8,34 +8,35 @@ const { items = [] } = Astro.props;
 </ul>
 
 <style>
-  :root {
-    --checkmark-icon: url("../src/icons/checkmark.svg");
-  }
-  ul {
-    display: grid;
-    
-  }
+  @layer components {
+    :root {
+      --checkmark-icon: url("../src/icons/checkmark.svg");
+    }
+    ul {
+      display: grid;
+    }
 
-  ul li {
-    display: grid;
-    grid-template-columns: auto 1fr; 
-    align-items: top; 
-    gap: 1rem;
-  }
+    ul li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: top;
+      gap: 1rem;
+    }
 
-  ul li::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-image: url("../src/icons/checkmark.svg"); 
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  @media (max-width: 800px) {
     ul li::before {
-      left: 0;
-      color: white;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: url("../src/icons/checkmark.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: 800px) {
+      ul li::before {
+        left: 0;
+        color: white;
+      }
     }
   }
 </style>

@@ -43,13 +43,16 @@ const caseData = await fetch(
 <style>
 
 @layer components {
-
-
   article {
     display: grid;
     grid-template-columns: subgrid;
-    ul {
-    text-decoration: dotted;
+   
+ 
+  
+    section{
+      width: 70ch;
+      
+      
   }
   }
 
@@ -60,7 +63,8 @@ const caseData = await fetch(
 
  
   h2 {
-    font-size: 2.5rem;
+    font-size: var(--h2-font-size);
+    font-w
   }
   h3 {
     font-size: 2rem;
